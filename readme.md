@@ -5,10 +5,10 @@ Ideas for simpler authentication.
 The usernames and passwords and oauths are killing me...
 
 ## How
-1) Your app creates an invisible iframe pointed at the service
-2) Your app sends the service a nonce
-3) The service responds with a dictionary of identities: `{ publicKey1: nonceSignature, publicKey2: nonceSignature ... }`
-4) Your app permits access to resources owned by the identities with valid signatures
+1) Your app creates an invisible iframe pointed at the service  
+2) Your app sends the service a nonce  
+3) The service responds with a dictionary of identities: `{ publicKey1: nonceSignature, publicKey2: nonceSignature ... }`  
+4) Your app permits access to resources owned by the identities with valid signatures  
 
 Goals:
 * A single asymmetric keypair (ECDSA, P-256) represent a single identity
