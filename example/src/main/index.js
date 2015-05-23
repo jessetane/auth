@@ -30,13 +30,11 @@ ExampleMainView.prototype.show = function () {
 }
 
 ExampleMainView.prototype._onauthLoad = function () {
+  if (!this.authEl.src) return // sometimes the iframe will trigger a load event before src has been set
+
   this.authEl.removeEventListener('load', this._onauthLoad)
   this.authClient = new AuthClient(this.authEl.contentWindow, process.env.AUTH_ORIGIN)
-
-  // onload is a tiny bit too early sometimes?
-  setTimeout(function () {
-    this.authClient.signin(this._onsignin)
-  }.bind(this))
+  this.authClient.signin(this._onsignin)
 }
 
 ExampleMainView.prototype._onsignin = function (err, identities, newIdentityPublicKey) {
