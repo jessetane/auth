@@ -10,6 +10,14 @@ The usernames and passwords and oauths are killing me...
 3) The service responds with a dictionary of identities: `{ publicKey1: nonceSignature, publicKey2: nonceSignature ... }`  
 4) Your app permits access to resources owned by the identities with valid signatures  
 
+## Example
+```
+$ npm install
+$ bin/start &
+$ cd example
+$ bin/start 
+```
+
 Goals:
 * A single asymmetric keypair (ECDSA, P-256) represent a single identity
 * Any number of identities may be generated for a particular origin
