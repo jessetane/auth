@@ -3,7 +3,6 @@
 var fs = require('fs')
 var dz = require('dezalgo')
 var glob = require('glob')
-var touch = require('touch')
 var watch = require('chokidar').watch
 var build = require('./build')
 var buildcss = require('./build-css')

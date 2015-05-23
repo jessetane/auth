@@ -33,7 +33,6 @@ function buildjs (cb) {
       cb(new Error('error building javascript: ' + err.message))
     })
     .pipe(concat(function (data) {
-
       if (process.env.NODE_ENV === 'production') {
         data = uglify.minify(data.toString(), { fromString: true }).code
       }
