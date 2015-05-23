@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+module.exports = buildcss
+
+var fs = require('fs')
+var glob = require('glob')
+var concat = require('concat-stream')
+var multistream = require('multistream')
+var autoprefixer = require('autoprefixer-core')
+
+var ismain = !module.parent
+
+if (ismain) {
+  buildcss(function (err) {
+    if (err) throw err
+
+    console.log('style built successfully')
+  })
+}
+
+function buildcss (cb) {
+  var files = []
+
+  files = files.concat(glob.sync(__dirname + '/../src/**/*reset.css'))
+  files = files.concat(glob.sync(__dirname + '/../src/**/!(reset|helper).css'))
+  files = files.concat(glob.sync(__dirname + '/../src/**/*helper.css'))
+
+  var input = multistream(files.map(function (file) {
+    return fs.createReadStream(file)
+  }))
+
+  input.pipe(concat({ encoding: 'string' }, function (data) {
+    var err = null
+
+    try {
+      fs.writeFileSync(__dirname + '/../share/build.css', autoprefixer.process(data).css)
+    } catch (e) {
+      err = e
+    }
+
+    if (err) {
+      err.message = 'error building style: ' + err.message
+    }
+
+    cb && cb(err)
+  }))
+}

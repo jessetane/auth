@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+module.exports = serve
+
+var http = require('http')
+var ecstatic = require('ecstatic')
+
+process.env.PORT = process.env.PORT || '9000'
+process.env.HOST = process.env.HOST || '::'
+
+var server = null
+var statics = ecstatic(__dirname + '/../share', {
+  cache: 'no-cache'
+})
+
+var ismain = !module.parent
+
+if (ismain) {
+  serve()
+}
+
+function serve (cb) {
+  server && server.close()
+
+  server = http.createServer(function (req, res) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(req.method + ' ' + req.url)
+    }
+
+    statics(req, res, function () {
+      req.url = '/'
+      res.statusCode = 200
+      statics(req, res)
+    })
+  })
+
+  server.listen(process.env.PORT, process.env.HOST, function (err) {
+    if (err) err.message = 'error starting server: ' + err.message
+    cb && cb(err)
+  })
+
+  return server
+}

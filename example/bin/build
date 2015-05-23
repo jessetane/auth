@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+module.exports = build
+
+var queue = require('queue')
+var buildjs = require('./build-js')
+var buildcss = require('./build-css')
+
+var ismain = !module.parent
+
+if (ismain) {
+  build(function (err) {
+    if (err) throw err
+
+    console.log('application built successfully')
+  })
+}
+
+function build (cb) {
+  var q = queue()
+  q.push(buildjs)
+  q.push(buildcss)
+  q.start(cb)
+}
