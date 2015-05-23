@@ -18,7 +18,7 @@ $ cd example
 $ bin/start 
 ```
 
-Goals:
+## Goals:
 * A single asymmetric keypair (ECDSA, P-256) represent a single identity
 * Any number of identities may be generated for a particular origin
 * Friendly for offline, and / or local-only use cases
