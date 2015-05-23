@@ -2,7 +2,7 @@
 Ideas for simpler authentication.
 
 ## Why
-The usernames and passwords and oauths are killing me...
+Usernames and passwords are annoying.
 
 ## How
 1) Your app creates an invisible iframe pointed at the service  
