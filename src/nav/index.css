@@ -1,0 +1,26 @@
+#nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+#nav h1 {
+  margin-bottom: 0;
+  flex-grow: 1;
+  font-weight: normal;
+}
+
+#nav #id {
+  margin: 8px;
+}
+
+#nav .button {
+  margin: 4px;
+}
+
+#nav .error {
+  height: auto;
+}

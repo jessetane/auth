@@ -1,0 +1,27 @@
+#key-ring-index {
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+}
+
+#key-ring-index .button {
+  margin: 4px;
+}
+
+#key-ring-index #key-rings ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#key-ring-index #key-rings li {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+#key-ring-index #key-rings li a {
+  display: block;
+  padding: 20px;
+  background-color: #EEE;
+  text-align: left;
+}

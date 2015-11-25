@@ -1,0 +1,7 @@
+#key-pair-create form {
+  margin: auto;
+}
+
+#key-pair-create form > * {
+  margin: 4px;
+}

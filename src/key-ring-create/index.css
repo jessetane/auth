@@ -1,0 +1,7 @@
+#key-ring-create form {
+  margin: auto;
+}
+
+#key-ring-create form > * {
+  margin: 4px;
+}

@@ -1,0 +1,34 @@
+#key-ring-single {
+  width: 100%;
+  max-width: 480px;
+}
+
+#key-ring-single .button {
+  margin: 8px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#key-ring-single #key-pairs ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#key-ring-single #key-pairs li {
+  margin: 0;
+  margin-bottom: 8px;
+  background-color: #EEE;
+}
+
+#key-ring-single #key-pairs li a {
+  display: block;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+#key-ring-single #key-pairs li #forget {
+  margin: 10px;
+  font-size: 0.7em;
+}

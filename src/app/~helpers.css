@@ -1,0 +1,54 @@
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.oneline {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.collapsible {
+  transition: opacity 0.5s,
+              width 0.5s,
+              height 0.5s,
+              margin 0.5s;
+}
+
+.notransition * {
+  transition: none !important;
+}
+
+.fadable {
+  transition: opacity 1s;
+}
+
+.opaque {
+  opacity: 1 !important;
+}
+
+.translucent {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.fixed {
+  position: fixed !important;
+}

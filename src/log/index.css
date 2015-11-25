@@ -1,0 +1,50 @@
+#log {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  flex-direction: column;
+/*  justify-content: flex-end;*/
+}
+
+#log .message {
+  /*background: #1d8cd1;*/
+  background: #1d8cd1;
+  padding: 1em;
+  margin-bottom: 2px;
+  margin-left: auto;
+  min-height: 0;
+  color: #FFF;
+  transition: transform 0.3s,
+              opacity 0.3s,
+              height 0.3s,
+              margin 0.3s,
+              padding-top 0.3s,
+              padding-bottom 0.3s;
+}
+
+#log .message.before {
+  transform: translate(0, 100%);
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#log .message.after {
+  transform: translate(0, -100%);
+  opacity: 0;
+  transition: transform 1s,
+              opacity 1s;
+}
+
+#log .message.warn {
+  background: #FF6622;
+}
+
+#log .message.error {
+  background: #FF4444;
+}

@@ -1,0 +1,46 @@
+#key-pair-single {
+  max-width: 480px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#key-pair-single #favicon {
+  width: 32px;
+  height: 32px;
+}
+
+#key-pair-single .row {
+  min-height: 40px;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+
+#key-pair-single .row.center {
+  align-items: center;
+  margin-top: 0;
+}
+
+#key-pair-single .label {
+  min-width: 100px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#key-pair-single .value {
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+#key-pair-single input {
+  min-width: 0;
+}
+
+#key-pair-single #buttons {
+  margin: auto;
+  margin-top: 20px;
+}
+
+#key-pair-single #buttons > * {
+  margin: 4px;
+}
